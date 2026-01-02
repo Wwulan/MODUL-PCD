@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pertemuan 9 - PCD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content-box">
+            <div class="materi-header">
+                <small style="color: var(--primary); font-weight: bold;">MODUL KULIAH</small>
+                <h1>Pertemuan 9: MORFOLOGI CITRA</h1>
+            </div>
+
+            <div class="materi-body">
+                <p>Materi ini membahas Morfologi Citra dalam Pengolahan Citra Digital</p>
+                
+                <h3>Sub-Topik:</h3>
+                <ul>
+                    <li>Morfologi Citra</li>
+                    <li>Operasi Morfologi Pada Citra Biner</li>
+                    <li>Operasi Morfologi Pada Citra Warna</li>
+                   
+                </ul>
+
+                <h3>Morfologi Citra</h3>
+                <p>Morfologi citra adalah teknik pengolahan citra yang menggunakan struktur bentuk
+dan geometri objek untuk melakukan operasi pada citra biner atau grayscale. Digunakan dalam segmentasi citra, pengenalan objek, pengurangan noise,
+ekstraksi bentuk, dan analisis tekstur.</p>
+
+                <h3>Operasi Morfologi Pada Citra Biner</h3>
+                <p>Citra biner adalah citra yang hanya memiliki dua nilai piksel: 0 (hitam) dan 255
+(putih). Operasi morfologi pada citra biner banyak digunakan karena lebih
+sederhana dan efektif dalam mendeteksi bentuk dan struktur dasar objek dalam
+citra.</p>
+<p>Operasi Dasar Pada Citra Biner</p>
+                <ul>
+                    
+                    <li>Dilasi (Dilation): Dilasi memperluas area objek putih dalam citra biner. Setiap piksel putih akan
+"mendorong" bentuknya ke arah piksel hitam di sekitarnya. Berguna untuk memperbesar atau menghubungkan area-area objek yang
+berdekatan. Contohnya pada citra biner dengan objek lingkaran kecil, operasi dilasi akan memperbesar
+lingkaran tersebut.</li>
+                    <li>Erosi (Erosion): Erosi menghilangkan piksel putih dari tepi objek, memperkecil area objek.
+Cocok untuk mengurangi noise atau memisahkan objek yang saling menempel.
+Contohnya pada citra dengan objek berbentuk persegi kecil, operasi erosi akan mengurangi
+ukuran persegi tersebut.</li>
+ <li>Opening: Kombinasi dari erosi diikuti dengan dilasi.
+Sering digunakan untuk menghilangkan noise kecil sambil mempertahankan
+bentuk utama objek.
+Contohnya pada citra dengan titik-titik kecil sebagai noise, operasi opening akan
+menghilangkan titik-titik tersebut.</li>
+ <li>Closing: Kombinasi dari dilasi diikuti dengan erosi.
+Digunakan untuk menutup lubang-lubang kecil atau celah di dalam objek.
+Pada citra dengan lingkaran berlubang, closing dapat menutup lubang tersebut sehingga
+menjadi objek penuh.</li>
+                </ul>
+<h3>Contoh Penerapannya Pada Python</h3>
+
+<img src="p9_1.jpg" alt="Kode & Output" class="materi-image">
+<p class="image-caption">Gambar 9.1: Kode Python & output Implementasi Operasi Morfologi Citra Biner</p>
+
+
+
+                <h3>Operasi Morfologi Pada Citra Warna</h3>
+                <p>Pada citra warna, operasi morfologi lebih kompleks dibandingkan citra biner
+karena setiap piksel memiliki nilai intensitas untuk setiap kanal warna
+(biasanya RGB - Merah, Hijau, dan Biru). Untuk itu, teknik morfologi pada citra
+warna biasanya diterapkan pada setiap kanal warna secara terpisah atau
+dengan pendekatan khusus pada keseluruhan citra.</p>
+<p>Operasi dasar morfologi seperti dilasi, erosi, opening, dan closing
+dapat dilakukan pada citra warna, baik dengan metode per-kanal atau
+dengan konversi ke grayscale. Berikut ini adalah contoh penggunaan
+operasi morfologi pada citra warna menggunakan pendekatan per-kanal
+RGB.</p>
+
+                <p>Pendekatan Operasi Morfologi Pada Citra Warna</p>
+                <ul>
+                    
+                    <li>Operasi per-Kanal: 
+Dilakukan dengan memisahkan citra warna menjadi tiga kanal (R, G, B) dan menerapkan
+operasi morfologi pada masing-masing kanal.
+Setelah operasi, ketiga kanal akan digabungkan kembali untuk membentuk citra akhir.</li>
+                    <li>Pendekatan Grayscale atau Nilai Intensitas: 
+Mengonversi citra warna ke dalam skala abu-abu (grayscale) atau menggunakan kanal
+intensitas dalam model warna HSI (Hue, Saturation, Intensity).
+Operasi morfologi diterapkan pada hasil grayscale atau kanal intensitas, dan perubahan
+tersebut akan diterapkan kembali pada citra warna asli.</li>
+               </ul>
+
+                <h3>Contoh Penerapannya Pada Python</h3>
+
+<img src="p9_2.jpg" alt="Kode & Output Python" class="materi-image">
+<p class="image-caption">Gambar 6.4: Kode & Output Python Implementasi Morfologi Pada Warna</p>
+
+              
+            </div>
+
+            <div class="nav-footer">
+                <a href="index.html" class="btn btn-dash">⬅ Kembali ke Dashboard</a>
+                <a href="PERTEMUAN8.html" class="btn btn-dash">⬅ Pertemuan Sebelumnya</a>
+                <a href="PERTEMUAN10.html" class="btn btn-next">Pertemuan Berikutnya ➡</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

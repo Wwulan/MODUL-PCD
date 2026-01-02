@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pertemuan 6 - PCD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content-box">
+            <div class="materi-header">
+                <small style="color: var(--primary); font-weight: bold;">MODUL KULIAH</small>
+                <h1>Pertemuan 6: SEGMENTASI CITRA</h1>
+            </div>
+
+            <div class="materi-body">
+                <p>Materi ini membahas Segmentasi Citra dalam Pengolahan Citra Digital</p>
+                
+                <h3>Sub-Topik:</h3>
+                <ul>
+                    <li>Segmentasi Citra</li>
+                    <li>Thresholding Dalam Segmentasi Citra</li>
+                    <li>Active Contour (Snakes) Dalam Segmentasi Citra</li>
+                    <li>Perbaikan citra dengan operasi Transformasi</li>
+                </ul>
+
+                <h3>Segmentasi Citra</h3>
+                <p>Segmentasi citra adalah proses pembagian atau pemisahan gambar digital
+menjadi beberapa bagian atau region, dengan tujuan untuk menyederhanakan
+atau mengubah representasi gambar sehingga lebih mudah untuk dianalisis.
+Segmentasi citra biasanya digunakan untuk mengidentifikasi objek atau batas
+(misalnya, garis, kurva) dalam sebuah gambar. Dalam segmentasi citra, setiap piksel pada gambar diberikan label tertentu
+sehingga piksel dengan label yang sama berbagi karakteristik visual tertentu,
+seperti warna, intensitas, atau tekstur. Metode ini sangat penting dalam berbagai
+aplikasi pengolahan citra seperti pengenalan objek, analisis medis, dan
+pengawasan.</p>
+
+                <h3>Thresholding Dalam Segmentasi Citra</h3>
+                <p>Thresholding adalah salah satu metode paling sederhana dan umum digunakan
+dalam segmentasi citra. Pada dasarnya, thresholding mengubah citra menjadi citra biner (dua tingkat warna)
+dengan membagi piksel berdasarkan nilai ambang (threshold) tertentu.
+Piksel yang memiliki nilai intensitas di atas atau di bawah nilai threshold tersebut
+akan dikelompokkan ke dalam kelas yang berbeda, seperti latar depan
+(foreground) atau latar belakang (background).</p>
+<p>Cara Kerja Thresholding</p>
+                <ul>
+                    
+                    <li>Setiap piksel dalam gambar memiliki nilai intensitas. Untuk gambar grayscale, nilai
+intensitas piksel berkisar antara 0 (hitam) hingga 255 (putih).</li>
+                    <li>Dengan thresholding, kita memilih nilai ambang (threshold), misalnya T=128T =
+128T=128. Semua piksel dengan nilai intensitas lebih tinggi dari threshold tersebut
+akan diubah menjadi nilai maksimal (biasanya putih atau 255), dan piksel dengan nilai
+intensitas di bawah threshold akan diubah menjadi nilai minimal (biasanya hitam atau
+0).</li>
+                </ul>
+                <p>Jenis-jenis Thresholding</p>
+                <ul>
+                    
+                    <li>Global Thresholding: Pada metode ini, satu nilai threshold TTT yang konstan
+diterapkan ke seluruh gambar. Teknik ini baik jika pencahayaan dan intensitas
+gambar seragam.</li>
+                    <li>Adaptive Thresholding: Alih-alih menggunakan satu nilai threshold untuk seluruh
+gambar, metode ini menghitung nilai threshold yang berbeda untuk wilayah kecil
+(blok) dari gambar. Adaptive thresholding berguna untuk gambar dengan
+pencahayaan yang tidak merata.</li>
+<li>Otsus Thresholding: Otsus method adalah teknik thresholding global yang
+menentukan nilai ambang optimal dengan meminimalkan varians intra-kelas
+(perbedaan di dalam kelas foreground dan background). Teknik ini efektif ketika
+terdapat perbedaan yang jelas antara latar depan dan latar belakang.</li>
+                </ul>
+<h3>Contoh Penerapannya Pada Python</h3>
+
+<img src="p6_1.jpg" alt="Kode & Output" class="materi-image">
+<p class="image-caption">Gambar 6.1: Kode Python & output Global Thresholding</p>
+
+<img src="p6_2.jpg" alt="Kode & Output" class="materi-image">
+<p class="image-caption">Gambar 6.2: Kode Python & output Adaptive Thresholding</p>
+
+<img src="p6_3.jpg" alt="Kode & Output" class="materi-image">
+<p class="image-caption">Gambar 6.3: Kode Python & output Otsus Thresholding</p>
+
+
+                <h3>Active Contour (Snakes) Dalam Segmentasi Citra</h3>
+                <p>Active Contour Models (ACM), yang juga dikenal sebagai "Snakes", adalah
+salah satu teknik segmentasi citra berbasis kurva yang dinamis. Teknik ini
+bertujuan untuk menemukan batas atau kontur objek dalam gambar secara iteratif,
+dengan memanfaatkan informasi internal (bentuk dan energi kurva) dan eksternal
+(fitur gambar seperti tepi atau gradien). Model ini pertama kali diperkenalkan
+oleh Kass et al. pada tahun 1987. Active contour bekerja dengan memulai dari posisi awal (initialization) kurva atau
+garis, yang kemudian diperbarui secara iteratif untuk mendekati batas objek
+berdasarkan kekuatan internal dan eksternal. Teknik ini sangat populer di bidang
+pengolahan citra medis dan deteksi objek karena kemampuan adaptifnya dalam
+mengikuti bentuk objek yang kompleks.</p>
+<p>Active Contour berkerja dengan cara Energi Internal: Mengendalikan kelancaran dan kontinuitas kontur. Energi ini mengatur
+agar kurva tetap halus dan tidak terputus selama proses iterasi. Energi internal membantu
+mengontrol bentuk kurva sehingga tidak berubah secara tiba-tiba. Dan juga Energi Eksternal: Berhubungan dengan fitur citra, seperti tepi, gradien, atau intensitas
+piksel. Energi eksternal mendorong kurva untuk mendekati batas objek dalam citra. Fitur
+ini mendorong kontur ke arah bagian gambar yang mengandung informasi tepi yang
+signifikan.</p>
+
+                <h3>Contoh Penerapannya Pada Python</h3>
+
+<img src="p6_4.jpg" alt="Kode & Output Python" class="materi-image">
+<p class="image-caption">Gambar 6.4: Kode & Output Python Penggunaan Active Contour</p>
+
+<p>Penjelasan kode:</p>
+                <ul>
+                    <li>Inisialisasi Kurva: Lingkaran digunakan sebagai kurva awal di sekitar objek yang
+ingin disegmentasi.</li>
+                    <li>Active Contour: Fungsi active_contour dari pustaka scikit-image diterapkan pada
+citra yang telah dihaluskan dengan Gaussian filter untuk mengurangi noise.</li>
+                    <li>Parameter Alpha, Beta, dan Gamma: Alpha mengontrol kekuatan elastisitas, beta
+mengontrol kelancaran, dan gamma mengontrol kecepatan iterasi kurva.</li>
+
+              
+            </div>
+
+            <div class="nav-footer">
+                <a href="index.html" class="btn btn-dash">⬅ Kembali ke Dashboard</a>
+                <a href="PERTEMUAN5.html" class="btn btn-dash">⬅ Pertemuan Sebelumnya</a>
+                <a href="PERTEMUAN7.html" class="btn btn-next">Pertemuan Berikutnya ➡</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

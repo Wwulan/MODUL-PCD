@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pertemuan 10 - PCD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content-box">
+            <div class="materi-header">
+                <small style="color: var(--primary); font-weight: bold;">MODUL KULIAH</small>
+                <h1>Pertemuan 10: MORFOLOGI CITRAEKSTRAKSI CIRI CITRA LANJUTAN</h1>
+
+            <div class="materi-body">
+                <p>Materi ini membahas Morfologi Citra dalam Pengolahan Citra Digital</p>
+                
+                <h3>Sub-Topik:</h3>
+                <ul>
+                    <li>Ekstraksi Ciri Citra</li>
+                    <li>Histogram of Oriented Gradients (HOG)</li>
+                   <li>Ekstraksi Ciri Warna (Colour Features)</li>
+                   
+                </ul>
+
+                <h3>Ekstraksi Ciri Citra</h3>
+                <p>Ekstraksi ciri citra adalah proses pengambilan informasi penting dari citra digital
+untuk memahami karakteristik atau pola tertentu. Dalam pengolahan citra dan visi
+komputer, ekstraksi ciri sangat penting untuk mereduksi data kompleks,
+menangkap aspek-aspek yang relevan, dan mempermudah proses analisis atau
+klasifikasi objek pada citra. Ekstraksi ciri berperan sebagai jembatan antara data citra mentah dan tahap
+selanjutnya dalam proses analisis, seperti klasifikasi, segmentasi, atau pengenalan
+pola. Tujuan Ekstraksi Ciri adalah untuk mereduksi data, memperjelas pola, dan
+memungkinkan klasifikasi atau segmentasi.</p>
+
+
+                <h3>Histogram of Oriented Gradients (HOG)</h3>
+                <p>Histogram of Oriented Gradients (HOG) adalah fitur deskriptif yang digunakan
+untuk menggambarkan distribusi gradien intensitas dalam citra. HOG menganalisis
+orientasi gradien intensitas citra pada setiap piksel untuk menangkap informasi yang
+berkaitan dengan bentuk objek, tekstur, dan fitur-fitur lokal lainnya.</p>
+
+                
+<h3>Contoh Penerapannya Pada Program</h3>
+
+<img src="p10_1.jpg" alt="Kode & Output" class="materi-image">
+<p class="image-caption">Gambar 10.1: Kode Implementasi Ekstrak Ciri Tekstur</p>
+
+<img src="p10_2.jpg" alt="Kode & Output" class="materi-image">
+<p class="image-caption">Gambar 10.2: Kode Implementasi Ekstrak Ciri Tekstur</p>
+
+<img src="p10_3.jpg" alt="Kode & Output" class="materi-image">
+<p class="image-caption">Gambar 10.3: Output Implementasi Ekstrak Ciri Tekstur</p>
+
+<ul>
+<p>Penjelasan kode:</p>
+<p>Histogram LBP menunjukkan distribusi frekuensi dari pola-pola lokal yang ada
+dalam citra. Nilai-nilai pada histogram ini menggambarkan frekuensi kemunculan
+berbagai pola biner di citra. Hasil dari ekstraksi fitur HOG menunjukkan nilai-nilai gradien dalam citra. Namun,
+dalam output ini, sepuluh nilai pertama HOG semuanya bernilai 0. Ini bisa terjadi jika
+citra yang digunakan memiliki sedikit atau tidak ada gradien yang signifikan, seperti
+citra dengan banyak area datar atau seragam. Secara umum, fitur HOG digunakan untuk
+mendeteksi perubahan orientasi atau tepi dalam citra.</p>
+</ul>
+
+                <h3>Ekstraksi Ciri Warna (Colour Features)</h3>
+                <p>Ekstraksi ciri warna adalah proses menganalisis distribusi warna dalam sebuah citra
+untuk mendapatkan informasi yang relevan mengenai objek atau area tertentu. Ciri warna
+digunakan dalam klasifikasi citra, segmentasi, pengenalan pola, dan pengambilan
+informasi berbasis konten (CBIR). </p>
+ 
+              
+
+                <h3>Contoh Penerapannya Pada Program</h3>
+
+
+<img src="p10_4.jpg" alt="Kode & Output" class="materi-image">
+<p class="image-caption">Gambar 10.4: Kode Implementasi Ekstrak Ciri Warna</p>
+
+<img src="p10_5.jpg" alt="Kode & Output" class="materi-image">
+<p class="image-caption">Gambar 10.5: Kode Implementasi Ekstrak Ciri Warna</p>
+
+<img src="p10_6.jpg" alt="Kode & Output" class="materi-image">
+<p class="image-caption">Gambar 10.6: Output Implementasi Ekstrak Ciri Warna</p>
+
+<img src="p10_7.jpg" alt="Kode & Output" class="materi-image">
+<p class="image-caption">Gambar 10.7: Output Implementasi Ekstrak Ciri Warna</p>
+
+<ul>
+<p>Penjelasan kode:</p>
+<p>Hasil analisis citra memberikan wawasan tentang distribusi warna dan tekstur yang ada.
+Untuk kanal warna HSV, pada Hue, nilai rata-rata (mean) sebesar 51.68 menunjukkan
+dominasi warna yang cenderung berada pada spektrum hijau ke kuning, meskipun
+sebagian besar piksel memiliki nilai hue yang lebih rendah, dengan median sebesar
+12.00. Variansi pada hue cukup tinggi, yaitu 2231.63, menandakan adanya variasi warna
+yang luas dalam citra. Untuk Saturation, nilai rata-rata yang tinggi (92.96) menunjukkan
+bahwa warna dalam citra cenderung cerah dan jenuh. Nilai median 99.00 menunjukkan
+bahwa sebagian besar piksel memiliki saturasi yang sangat tinggi. Variansi yang juga
+cukup besar (3011.31) menunjukkan perbedaan tingkat kejenuhan warna di antara piksel.
+Sedangkan pada Value, nilai rata-rata 108.87 menunjukkan kecerahan yang relatif terang,
+meskipun median yang lebih rendah (63.00) menunjukkan bahwa sebagian besar piksel
+memiliki intensitas cahaya yang lebih rendah. Variansi yang sangat tinggi (5905.27)
+menunjukkan adanya perbedaan besar dalam kecerahan citra, dengan beberapa bagian
+citra yang sangat terang dan lainnya lebih gelap. Untuk analisis warna dominan,
+menggunakan metode K-means, ditemukan tiga warna utama dalam citra. Warna 1
+dengan nilai RGB [42, 41, 42] menggambarkan warna gelap atau abu-abu, Warna 2
+dengan RGB [217, 151, 116] lebih cerah dan mencolok, memberikan nuansa oranye atau
+cokelat muda, dan Warna 3 dengan RGB [155, 83, 60] menunjukkan warna merah
+kecoklatan yang lebih pekat. Hasil ini menunjukkan bahwa citra memiliki variasi yang
+cukup besar dalam hal saturasi dan kecerahan, dengan dominasi warna yang cerah dan
+netral.</p>
+</ul>
+
+            </div>
+
+            <div class="nav-footer">
+                <a href="index.html" class="btn btn-dash">⬅ Kembali ke Dashboard</a>
+                <a href="PERTEMUAN9.html" class="btn btn-dash">⬅ Pertemuan Sebelumnya</a>
+                <a href="PERTEMUAN11.html" class="btn btn-next">Pertemuan Berikutnya ➡</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
