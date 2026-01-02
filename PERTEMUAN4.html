@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pertemuan 4 - PCD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content-box">
+            <div class="materi-header">
+                <small style="color: var(--primary); font-weight: bold;">MODUL KULIAH</small>
+                <h1>Pertemuan 4: HISTOGRAM CITRA</h1>
+            </div>
+
+            <div class="materi-body">
+                <p>Materi ini membahas Histogram Citra dalam Pengolahan Citra Digital</p>
+                
+                <h3>Sub-Topik:</h3>
+                <ul>
+                    <li>Histogram dalam konteks pengolahan citra</li>
+                    <li>Algoritma Perhitungan Histogram</li>
+                    <li>Ekualisasi Histogram</li>
+                    <li>Spesifikasi Histogram</li>
+                </ul>
+
+                <h3>Histogram dalam konteks pengolahan citra</h3>
+                <p>Histogram dalam konteks pengolahan citra adalah grafik yang merepresentasikan
+distribusi intensitas piksel dalam sebuah gambar. Setiap gambar digital terdiri dari
+piksel-piksel dengan nilai intensitas tertentu. Pada gambar grayscale (hitam-
+putih), intensitas piksel bernilai dari 0 (hitam) hingga 255 (putih). Pada gambar
+berwarna (RGB), setiap piksel terdiri dari tiga saluran warna (Red, Green, Blue),
+yang juga memiliki intensitas dari 0 hingga 255 untuk masing-masing warna. Histogram membantu kita memahami karakteristik gambar, misalnya kontras,
+pencahayaan, dan distribusi warna. </p>
+<p>Histogram berguna untuk berbagai operasi pengolahan citra, seperti:
+Deteksi pencahayaan: Histogram yang cenderung berada di ujung kiri (nilai
+rendah) menunjukkan gambar yang gelap, sementara yang di ujung kanan
+menunjukkan gambar yang terang. Perbaikan kualitas gambar: Misalnya, dengan menggunakan histogram
+equalization untuk meningkatkan kontras. Pengolahan lebih lanjut: Digunakan dalam berbagai teknik analisis citra lanjutan
+seperti segmentasi dan thresholding.</p>
+
+
+                <h3>Algoritma Perhitungan Histogram</h3>
+                <p>Histogram citra mewakili distribusi nilai intensitas piksel dalam suatu gambar.
+Algoritma perhitungan histogram pada dasarnya adalah menghitung frekuensi dari
+setiap nilai intensitas yang ada pada gambar. </p>
+<p>Langkah-langkah dalam perhitungan histogram antara lain:</p>
+                <ul>
+                    <li>Inisialisasi Array Histogram: Siapkan array dengan panjang yang sesuai dengan
+jumlah intensitas. Misalnya, untuk gambar 8-bit, ada 256 kemungkinan nilai
+intensitas (0-255), sehingga array histogram memiliki panjang 256.</li>
+                    <li>Iterasi Piksel Gambar: Lakukan iterasi pada setiap piksel di gambar dan periksa
+nilai intensitasnya.</li>
+                    <li>Peningkatan Frekuensi di Histogram: Untuk setiap intensitas yang ditemukan,
+tambahkan frekuensinya pada array histogram di indeks yang sesuai.</li>
+                    <li>Normalisasi (Opsional): Terkadang histogram perlu dinormalisasi sehingga nilai
+frekuensinya diubah menjadi proporsi dari jumlah total piksel dalam gambar.</li>
+                </ul>
+<h3>Contoh Penerapannya Pada Python</h3>
+
+<img src="p4_1.jpg" alt="Kode Python Histogram" class="materi-image">
+<p class="image-caption">Gambar 4.1: Kode Python Perhitungan Histogram Manual pada Citra</p>
+
+<img src="p4_2.jpg" alt="Output Histogram" class="materi-image">
+<p class="image-caption">Gambar 4.2: Output Kode Perhitungan Histogram Manual pada Citra</p>
+
+<img src="p4_3.jpg" alt="Kode Python Histogram" class="materi-image">
+<p class="image-caption">Gambar 4.3: Kode Python Perhitungan Histogram Manual pada Citra</p>
+
+<img src="p4_4.jpg" alt="Output Histogram" class="materi-image">
+<p class="image-caption">Gambar 4.4: Output Gambar Kode Perhitungan Histogram Manual pada Citra</p>
+<p>Penjelasan kode:</p>
+                <ul>
+                    <li>cv2.imread('gambar.jpg', cv2.IMREAD_GRAYSCALE): Membaca gambar dalam
+format grayscale.</li>
+                    <li>cv2.calcHist([image], [0], None, [256], [0, 256]): Menghitung histogram gambar
+grayscale. Argumen [0] menunjukkan bahwa histogram dihitung untuk channel 0
+(grayscale).</li>
+                    <li>plt.plot(histogram): Menampilkan histogram sebagai grafik garis.</li>
+                </ul>
+
+
+                <h3>Ekualisasi Histogram</h3>
+                <p>Ekualisasi histogram adalah teknik yang digunakan untuk meningkatkan kontras
+gambar dengan menyebarkan distribusi intensitas piksel secara lebih merata.
+Teknik ini penting dalam aplikasi seperti pengenalan objek dan peningkatan detail
+gambar.</p>
+<h3>Contoh Penerapannya Pada Python</h3>
+
+<img src="p4_5.jpg" alt="Kode Python Histogram" class="materi-image">
+<p class="image-caption">Gambar 4.5: Kode Python Perhitungan Histogram Ekualisasi pada Citra</p>
+
+<img src="p4_6.jpg" alt="Output Histogram" class="materi-image">
+<p class="image-caption">Gambar 4.6: Output Kode Perhitungan Histogram Ekualisasi pada Citra</p>
+<p>Penjelasan kode:</p>
+                <ul>
+                    <li>cv2.equalizeHist(image): Fungsi ini melakukan equalization pada histogram
+gambar grayscale.</li>
+                    <li>Gambar hasil equalization akan memiliki kontras yang lebih baik karena distribusi
+intensitasnya telah diperbaiki.</li>
+        
+                </ul>
+
+                <h3>Spesifikasi Histogram</h3>
+                <p>Spesifikasi histogram (atau matching histogram) adalah proses menyesuaikan
+histogram gambar sumber sehingga cocok dengan histogram target yang
+diinginkan, biasanya berasal dari gambar referensi. yang terdiri dari Langkah-langkah seperti menghitung histogram dan CDF gambar sumber IsI_sIs,  
+Menghitung histogram dan CDF gambar referensi IrI_rIr, mencocokkan intensitas gambar sumber dengan gambar referensi berdasarkan nilai
+CDF. Setiap piksel pada gambar sumber diubah sehingga histogramnya mirip
+dengan histogram gambar referensi, lalu mentransformasi piksel gambar sumber menggunakan hasil pencocokan. Proses ini
+menghasilkan gambar baru yang memiliki distribusi intensitas yang serupa
+dengan gambar referensi.</p>
+                
+            </div>
+
+            <div class="nav-footer">
+                <a href="index.html" class="btn btn-dash">⬅ Kembali ke Dashboard</a>
+                <a href="PERTEMUAN3.html" class="btn btn-dash">⬅ Pertemuan Sebelumnya</a>
+                <a href="PERTEMUAN5.html" class="btn btn-next">Pertemuan Berikutnya ➡</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

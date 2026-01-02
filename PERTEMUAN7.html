@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pertemuan 7 - PCD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content-box">
+            <div class="materi-header">
+                <small style="color: var(--primary); font-weight: bold;">MODUL KULIAH</small>
+                <h1>Pertemuan 7: PENERAPAN SEGMENTASI CITRA</h1>
+            </div>
+
+            <div class="materi-body">
+                <p>Materi ini membahas penerapan Segmentasi Citra dalam Pengolahan Citra Digital</p>
+                
+                <h3>Sub-Topik:</h3>
+                <ul>
+                    <li>Segmentasi Citra Dengan Deteksi Tepi</li>
+                    <li>TSegmentasi Citra Berdasarkan Warna</li>
+                 
+                </ul>
+
+                <h3>Segmentasi Citra Dengan Deteksi Tepi</h3>
+                <p>Segmentasi citra adalah proses memisahkan citra menjadi beberapa bagian yang
+saling terpisah berdasarkan karakteristik tertentu, seperti warna, intensitas,
+tekstur, atau tepi. Segmentasi digunakan dalam berbagai aplikasi, seperti
+pengenalan objek, deteksi tepi, dan pemrosesan citra medis. Deteksi tepi adalah teknik dalam pengolahan citra untuk menemukan batas atau
+perubahan tajam dalam intensitas piksel. Tepi adalah titik-titik di mana intensitas
+piksel berubah dengan cepat, dan biasanya mengindikasikan batas antara dua
+area objek yang berbeda di dalam citra.</p>
+
+<p>Teknik Deteksi Tepi</p>
+                <ul>
+                    
+                    <li>Operator Sobel, Operator Sobel adalah filter deteksi tepi yang menggunakan kernel
+konvolusi untuk menghitung gradien intensitas di setiap piksel. Menggunakan dua
+kernel 3x3: satu untuk arah horizontal (Gx) dan satu untuk arah vertikal (Gy).
+Gradien total dihitung dengan formula</li>
+                    <li>Operator Canny, Detektor tepi Canny adalah algoritma multi-tahap yang lebih
+kompleks, dirancang untuk mengurangi noise dan mendeteksi tepi yang lebih
+akurat. Langkah-langkah utama dalam Canny:Penghalusan citra (Gaussian Filter)
+untuk mengurangi noise. Menghitung gradien untuk menemukan intensitas dan arah
+perubahan. Non-maximum suppression untuk menghilangkan piksel yang bukan
+bagian dari tepi. Double thresholding untuk menentukan tepi kuat dan tepi lemah.
+Edge tracking by hysteresis untuk menghubungkan tepi yang kuat dan lemah.</li>
+<li>Operator Prewitt Mirip dengan operator Sobel, tetapi menggunakan kernel berbeda
+untuk deteksi tepi dalam arah horizontal dan vertikal. Operator ini sedikit lebih
+sederhana dan lebih cepat daripada Sobel, tetapi menghasilkan hasil yang kurang
+akurat dalam beberapa kasus.</li>
+                </ul>
+
+<h3>Contoh Penerapannya Pada Python</h3>
+
+<img src="p7_1.jpg" alt="Kode & Output" class="materi-image">
+<p class="image-caption">Gambar 7.1: Kode Python & output Deteksi Tepi Python</p>
+
+<p>Penjelasan kode:</p>
+                <ul>
+                    <li>Citra dibaca dalam mode grayscale menggunakan cv2.imread().</li>
+                    <li>Citra dihaluskan menggunakan Gaussian blur untuk mengurangi noise.</li>
+                    <li>Sobel digunakan untuk menghitung gradien horizontal dan vertikal, kemudian
+digabungkan untuk mendapatkan magnitude total..</li>
+<li>Canny digunakan sebagai metode deteksi tepi yang lebih kompleks.</li>
+<li>Hasil deteksi tepi ditampilkan menggunakan Matplotlib.</li>
+                </ul>
+
+
+                <h3>Segmentasi Citra Berdasarkan Warna</h3>
+                <p>Segmentasi warna dapat dilakukan dengan menggunakan ambang batas (threshold) atau metode
+lain seperti clustering untuk mengelompokkan piksel yang memiliki kesamaan warna. Segmentasi Warna Sederhana dengan Thresholding di Ruang Warna RGB,
+ Pada segmentasi warna berbasis thresholding, kita menetapkan rentang nilai RGB atau HSV
+untuk memilih bagian citra yang ingin disegmentasi. Segmentasi Warna di Ruang Warna HSV , Metode ini sering lebih efisien karena rentang hue,
+saturation, dan value bisa lebih mudah diatur untuk menangkap variasi warna yang relevan. Segmentasi Warna Menggunakan K-Means Clustering, K-Means clustering adalah algoritma
+yang digunakan untuk mengelompokkan piksel menjadi beberapa kelompok (cluster)
+berdasarkan warna. Ini cocok untuk situasi di mana kita tidak tahu rentang warna yang tepat di
+awal.</p>
+<p>Langkah-langkah Segmentasi Warna</p>
+                <ul>
+                    
+                    <li>Pra-pemrosesan dan penghalusan Citra: Menggunakan filter Gaussian untuk mengurangi noise .Konversi Ruang Warna:
+Konversi dari ruang warna RGB ke HSV (jika diperlukan).</li>
+                    <li>Segmentasi dengan Thresholding: Tentukan rentang nilai warna (dalam RGB atau HSV) untuk objek yang ingin disegmentasi dan gunakan threshold untuk memisahkan objek berdasarkan nilai warna tersebut.</li>
+                                        <li>Pengolahan Setelah Segmentasi seperti morphological Operations: Gunakan operasi dilasi atau erosi untuk menyempurnakan hasil segmentasi
+(misalnya, untuk menghilangkan noise atau menghubungkan area yang terpisah).</li>
+                </ul>
+
+                <h3>Contoh Penerapannya Pada Python</h3>
+
+<img src="p7_2.jpg" alt="Kode & Output" class="materi-image">
+<p class="image-caption">Gambar 7.2: Kode Python Segmentasi Warna</p>
+
+<img src="p7_3.jpg" alt="Kode & Output" class="materi-image">
+<p class="image-caption">Gambar 7.3: Output Python Segmentasi Warna</p>
+
+<p>Penjelasan kode:</p>
+                <ul>
+                    <li>Konversi Ruang Warna: Citra asli dikonversi dari ruang warna RGB ke HSV.</li>
+                    <li>Thresholding: Rentang warna biru (dalam ruang warna HSV) digunakan untuk
+membuat mask yang akan mengisolasi bagian citra yang memiliki warna biru.</li>
+                    <li>Aplikasi Mask: Mask diterapkan pada citra asli untuk menghasilkan citra yang hanya
+menunjukkan bagian yang disegmentasi.</li>
+
+                </ul>
+
+              
+            </div>
+
+            <div class="nav-footer">
+                <a href="index.html" class="btn btn-dash">⬅ Kembali ke Dashboard</a>
+                <a href="PERTEMUAN6.html" class="btn btn-dash">⬅ Pertemuan Sebelumnya</a>
+                <a href="PERTEMUAN8.html" class="btn btn-next">Pertemuan Berikutnya ➡</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

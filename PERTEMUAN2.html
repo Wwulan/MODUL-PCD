@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pertemuan 2 - PCD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content-box">
+            <div class="materi-header">
+                <small style="color: var(--primary); font-weight: bold;">MODUL KULIAH</small>
+                <h1>Pertemuan 2: DASAR MATEMATIKA UNTUK PENGOLAHAN CITRA</h1>
+            </div>
+
+            <div class="materi-body">
+                <p>Materi ini membahas Konsep Dasar, Representasi, Operasi Dasar, dan Transformasi citra digital.</p>
+                
+                <h3>Sub-Topik:</h3>
+                <ul>
+                    <li>Konsep Dasar Citra</li>
+                    <li>Representasi Citra Digital</li>
+                    <li>Operasi Dasar Citra Digital</li>
+                    <li>Transformasi Citra</li>
+                </ul>
+
+                <h3>Konsep Dasar Citra</h3>
+                <p>Citra adalah representasi visual dari dunia nyata atau objek
+dalam bentuk yang dapat dipahami oleh komputer. Untuk memahami pengolahan citra digital dengan baik, penting untuk
+memahami konsep dasar pada pengolahan citra digital seperti: Piksel (Pixel) yang dimana Piksel adalah unit dasar dari citra
+Setiap piksel memiliki koordinat spasial (baris dan kolom) yang menentukan posisinya dalam citra.Setiap piksel memiliki nilai numerik yang menggambarkan
+tingkat kecerahan (grayscale) atau kombinasi warna (citra berwarna). Resolusi Citra yang dimana resolusi mengacu pada jumlah piksel dalam citra.
+Citra dengan resolusi tinggi memiliki lebih banyak detail karena memiliki lebih banyak piksel. Citra dengan resolusi rendah cenderung lebih kasar. Mode Citra
+yang dimana mode citra mengacu pada jenis informasi yang diwakili oleh setiap piksel. Citra grayscale hanya memiliki informasi kecerahan. 
+Citra berwarna memiliki informasi kecerahan dan warna, biasanya dalam mode RGB (Merah, Hijau, Biru). Citra biner hanya memiliki dua nilai piksel yang mungkin
+(hitam dan putih). Biasanya digunakan untuk segmentasi citra. Dan yang terakhir adalah Format citra mengacu pada cara data citra disimpan dalam
+memori komputer, seperti JPEG, PNG, atau BMP.  </p>
+
+
+                <h3>Representasi Citra Digital</h3>
+                <p>Representasi citra digital adalah cara untuk menggambarkan
+citra dalam bentuk yang dapat dipahami oleh komputer. Ini
+melibatkan penggunaan matriks atau array angka untuk
+mewakili tingkat kecerahan atau warna setiap piksel dalam
+citra. Dalam pengolahan citra digital, ada beberapa jenis
+representasi citra yang penting untuk dipahami antara lain adalah, Citra grayscale: citra yang hanya memiliki tingkat
+kecerahan sebagai informasi. Setiap piksel dalam citra
+grayscale direpresentasikan oleh satu angka, biasanya dalam
+rentang 0 hingga 255. Nilai 0 mewakili warna hitam, sementara
+nilai 255 mewakili warna putih. Citra Berwarna (Mode RGB):
+Citra berwarna mengandung informasi kecerahan dan warna.
+Representasi paling umum untuk citra berwarna adalah mode
+RGB (Merah, Hijau, Biru). Setiap piksel dalam citra RGB
+direpresentasikan oleh tiga nilai, masing-masing mewakili
+tingkat merah, hijau, dan biru dalam rentang 0 hingga 255. Citra biner: dimana hanya memiliki dua nilai piksel yaitu
+hitam dan putih. Ini adalah hasil dari proses segmentasi, di
+mana piksel-piksel dikelompokkan menjadi dua kelas
+berdasarkan ambang tertentu. Representasi citra biner
+menggunakan nilai biner, sering kali 0 untuk hitam dan 1 untuk
+putih. Matriks Citra: Citra digital dapat direpresentasikan sebagai matriks dua
+dimensi di mana setiap elemen matriks mewakili nilai piksel di
+lokasi yang sesuai dalam citra. Matriks ini dapat diolah menggunakan operasi matematika untuk menghasilkan efek
+tertentu pada citra. </p>
+
+                <h3>Operasi Dasar Citra Digital</h3>
+                <p>Operasi dasar pada citra adalah serangkaian operasi
+matematika dan transformasi yang diterapkan pada citra untuk
+mengubahnya atau menghasilkan citra baru. Ini adalah langkah
+awal dalam pengolahan citra digital. Beberapa operasi dasar
+pada citra melibatkan manipulasi tingkat kecerahan, kontras,
+dan distribusi nilai piksel. Berikut adalah beberapa operasi
+dasar yang umumnya digunakan seperti, Peningkatan Kecerahan dan kontras dimana Peningkatan Kecerahan: Operasi ini meningkatkan tingkat
+kecerahan seluruh citra dengan menambahkan nilai tetap ke
+setiap piksel. Ini membuat citra terlihat lebih terang. Sedangkan Peningkatan Kontras: Operasi ini meningkatkan kontras citra
+dengan menggandakan seluruh rentang nilai piksel sehingga
+perbedaan antara piksel-piksel yang berdekatan lebih jelas. Lalu Transformasi Logaritmik:
+Operasi ini mengubah tingkat kecerahan piksel dengan
+menggunakan logaritma. Hal ini berguna untuk meningkatkan
+detail di area dengan tingkat kecerahan rendah. Transformasi gamma: Operasi non-linear yang
+digunakan untuk memodifikasi kontras citra. Ini berguna untuk
+menyesuaikan tingkat kecerahan dalam kondisi tertentu. Operasi konvolusi melibatkan penggunaan kernel atau matriks
+konvolusi untuk mengubah nilai piksel dalam citra. Ini dapat
+digunakan untuk penghalusan, deteksi tepi, atau filter citra. Dan yang terakhir Transformasi citra yang melibatkan perubahan koordinat piksel
+dalam citra. Ini bisa termasuk rotasi, skalasi, atau pemantulan. </p>
+
+                <h3>Transformasi Citra</h3>
+                <p>PTransformasi citra adalah proses mengubah citra digital dari
+domain spasial (pada piksel individu) ke domain frekuensi atau
+domain lain untuk tujuan tertentu. Ini adalah salah satu konsep
+dasar dalam pengolahan citra digital dan sering digunakan
+untuk meningkatkan citra atau mengekstraksi informasi
+penting. Berikut adalah beberapa transformasi citra yang umum
+digunakan sehari-hari yaitu, Transformasi Fourier digunakan untuk mengubah citra dari
+domain spasial ke domain frekuensi. Ini berguna untuk
+menganalisis spektrum frekuensi citra dan dapat digunakan
+dalam proses seperti penyaringan frekuensi dan pemulihan
+citra. Transformasi wavelet membagi citra menjadi komponen
+frekuensi berbeda pada berbagai tingkat resolusi. Ini
+memungkinkan deteksi dan representasi fitur citra pada tingkat
+resolusi yang berbeda. Transformasi geometrik digunakan untuk mengubah bentuk
+atau posisi objek dalam citra. Ini termasuk rotasi, pemantulan,
+dan skalasi. Transformasi histogram adalah teknik yang digunakan untuk
+mengubah distribusi tingkat kecerahan dalam citra.Ini berguna
+untuk meningkatkan kontras dan penyesuaian tingkat
+kecerahan. Transformasi Logaritmik dan Eksponensial
+Transformasi logaritmik dan eksponensial digunakan untuk
+mengubah nilai piksel dalam citra secara non-linear. Ini sering digunakan untuk meningkatkan kontras di area dengan
+kecerahan rendah atau tinggi.</p>
+                
+            </div>
+
+            <div class="nav-footer">
+                <a href="index.html" class="btn btn-dash">⬅ Kembali ke Dashboard</a>
+                <a href="PERTEMUAN1.html" class="btn btn-dash">⬅ Pertemuan Sebelumnya</a>
+                <a href="PERTEMUAN3.html" class="btn btn-next">Pertemuan Berikutnya ➡</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
